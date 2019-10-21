@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
         @NonNull
         @Override
         public ContentViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-            return new ContentViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.viewholder_song, parent, false));
+            return new ContentViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.viewholder_content, parent, false));
         }
 
         @Override
