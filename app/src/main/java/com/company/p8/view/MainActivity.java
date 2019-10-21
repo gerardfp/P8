@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
                 mainViewModel.buscar(s).observe(MainActivity.this, new Observer<ItunesResponse>() {
                     @Override
                     public void onChanged(ItunesResponse itunesResponse) {
-                        contentList = itunesResponse.results;
+                        contentList = itunesResponse.results; // if != null
                         contentAdapter.notifyDataSetChanged();
                     }
                 });
