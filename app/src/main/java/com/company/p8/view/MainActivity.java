@@ -46,15 +46,16 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public boolean onQueryTextChange(String s) {
-                mainViewModel.buscar(s).observe(MainActivity.this, new Observer<ItunesResponse>() {
-                    @Override
-                    public void onChanged(ItunesResponse itunesResponse) {
-                        contentList = itunesResponse.results; // if != null
-                        contentAdapter.notifyDataSetChanged();
-                    }
-                });
-
+                mainViewModel.setTerm(s);
                 return false;
+            }
+        });
+
+        mainViewModel.itunesResponse.observe(MainActivity.this, new Observer<ItunesResponse>() {
+            @Override
+            public void onChanged(ItunesResponse itunesResponse) {
+                contentList = itunesResponse.results; // if != null
+                contentAdapter.notifyDataSetChanged();
             }
         });
     }
